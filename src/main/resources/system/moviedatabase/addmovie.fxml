@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="system.moviedatabase.AddMovieController">
+   <children>
+      <Label layoutX="197.0" layoutY="41.0" prefHeight="50.0" prefWidth="182.0" text="Add Movie" textAlignment="CENTER" textFill="#4c0dd4">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="127.0" prefHeight="40.0" prefWidth="218.0" text="Production Company" textFill="#5500ff">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="55.0" layoutY="178.0" prefHeight="23.0" prefWidth="182.0" text="Title" textFill="#5500ff">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="55.0" layoutY="220.0" prefHeight="20.0" prefWidth="182.0" text="Release Year" textFill="#6205ec">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="271.0" prefHeight="32.0" prefWidth="279.0" text="Number of Genre" textFill="#5500ff">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="326.0" prefHeight="28.0" prefWidth="248.0" text="Genre(seperated by comma)" textFill="#5500ff">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="382.0" prefHeight="28.0" prefWidth="248.0" text="Running Time(minutes)" textFill="#5500ff">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="433.0" prefHeight="28.0" prefWidth="248.0" text="Budget" textFill="#5500ff">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="55.0" layoutY="482.0" prefHeight="28.0" prefWidth="248.0" text="Revenue" textFill="#5500ff">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <ButtonBar layoutX="255.0" layoutY="562.0" prefHeight="40.0" prefWidth="296.0">
+        <buttons>
+          <Button fx:id="addMovieButton" minWidth="65.0" mnemonicParsing="false" onAction="#addMovieAction" prefHeight="26.0" prefWidth="122.0" text="Add" textFill="#4407e3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="resetButton" mnemonicParsing="false" onAction="#resetAction" text="Reset" textAlignment="RIGHT" textFill="#4009d9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="returnButton" mnemonicParsing="false" onAction="#returnAction" text="Return" textFill="#370aec">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+        </buttons>
+      </ButtonBar>
+      <TextField fx:id="name" layoutX="341.0" layoutY="179.0" prefHeight="26.0" prefWidth="239.0" />
+      <TextField fx:id="releaseYear" layoutX="341.0" layoutY="226.0" prefHeight="26.0" prefWidth="239.0" />
+      <TextField fx:id="genres" layoutX="341.0" layoutY="327.0" prefHeight="26.0" prefWidth="239.0" />
+      <TextField fx:id="runningTime" layoutX="341.0" layoutY="383.0" prefHeight="26.0" prefWidth="239.0" />
+      <TextField fx:id="budget" layoutX="341.0" layoutY="434.0" prefHeight="26.0" prefWidth="239.0" />
+      <TextField fx:id="revenue" layoutX="341.0" layoutY="484.0" prefHeight="26.0" prefWidth="239.0" />
+      <ChoiceBox fx:id="genreCount" layoutX="341.0" layoutY="277.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" />
+      <Label fx:id="productionCompanyName" layoutX="341.0" layoutY="132.0" prefHeight="28.0" prefWidth="239.0">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

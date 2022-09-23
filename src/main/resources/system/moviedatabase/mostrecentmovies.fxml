@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="system.moviedatabase.MostRecentMoviesController">
+    <TableView fx:id="tableView" layoutX="18.0" layoutY="103.0" prefHeight="188.0" prefWidth="820.0">
+        <columns>
+            <TableColumn fx:id="titleColumn" prefWidth="189.60000801086426" text="Title" />
+            <TableColumn fx:id="releaseYearColumn" prefWidth="119.60000610351562" text="Release Year" />
+            <TableColumn fx:id="genreColumn" prefWidth="137.0" text="Genre" />
+            <TableColumn fx:id="runningTimeColumn" prefWidth="145.19998168945312" text="Running Time(minutes)" />
+            <TableColumn fx:id="budgetColumn" minWidth="0.0" prefWidth="116.0" text="Budget" />
+            <TableColumn fx:id="revenueColumn" prefWidth="110.4000244140625" text="Revenue" />
+        </columns>
+    </TableView>
+    <Button fx:id="returnButton" layoutX="726.0" layoutY="307.0" mnemonicParsing="false" onAction="#returnAction" prefHeight="21.0" prefWidth="107.0" text="Return" textFill="#7716ff">
+      <font>
+         <Font name="System Bold" size="23.0" />
+      </font></Button>
+    <Label fx:id="message" layoutX="21.0" layoutY="19.0" prefHeight="64.0" prefWidth="820.0" textAlignment="CENTER" textFill="#7716ff">
+        <font>
+            <Font name="System Bold" size="30.0" />
+        </font>
+    </Label>
+</AnchorPane>

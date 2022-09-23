@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="system.moviedatabase.MainMenuController">
+   <children>
+       <Label fx:id="message" layoutX="21.0" layoutY="19.0" prefHeight="64.0" prefWidth="820.0" textAlignment="CENTER" textFill="#7716ff">
+           <font>
+               <Font name="System Bold" size="30.0" />
+           </font>
+       </Label>
+      <TableView fx:id="tableView" layoutX="18.0" layoutY="176.0" prefHeight="349.0" prefWidth="820.0">
+        <columns>
+          <TableColumn fx:id="titleColumn" prefWidth="154.40000915527344" resizable="false" text="Title" />
+            <TableColumn fx:id="releaseYearColumn" prefWidth="83.0" resizable="false" text="Release Year" />
+            <TableColumn fx:id="genreColumn" prefWidth="215.19998168945312" resizable="false" text="Genre" />
+            <TableColumn fx:id="runningTimeColumn" prefWidth="156.39999389648438" resizable="false" text="Running Time(minutes)" />
+            <TableColumn fx:id="budgetColumn" minWidth="0.0" prefWidth="102.0" resizable="false" text="Budget" />
+            <TableColumn fx:id="revenueColumn" prefWidth="110.4000244140625" resizable="false" text="Revenue" />
+        </columns>
+      </TableView>
+      <MenuBar layoutX="18.0" layoutY="88.0" prefHeight="25.0" prefWidth="820.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Search Movies">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#viewMostRecentMoviesAction" text="Most Recent Movies" />
+                  <MenuItem mnemonicParsing="false" onAction="#viewMostRevenueMoviesAction" text="Movies with the Maximum Revenue" />
+                  <MenuItem fx:id="totalprofit" mnemonicParsing="false" onAction="#viewTotalProfitAction" text="Total Profit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Add Movie">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#addMovieAction" text="Start" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Transfer Ownership">
+               <items>
+                  <MenuItem fx:id="transfer" mnemonicParsing="false" onAction="#transferMovieAction" text="Choose Movie" />
+               </items></Menu>
+        </menus>
+      </MenuBar>
+      <Button fx:id="refreshButton" layoutX="723.0" layoutY="130.0" mnemonicParsing="false" onAction="#refreshAction" prefHeight="26.0" prefWidth="114.0" text="Refresh" textFill="#7716ff">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button fx:id="logOutButton" layoutX="721.0" layoutY="544.0" mnemonicParsing="false" onAction="#logOutAction" prefHeight="26.0" prefWidth="114.0" text="Log Out" textFill="#7716ff">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="system.moviedatabase.TransferMovieController">
+   <children>
+      <Label alignment="CENTER" layoutX="152.0" layoutY="38.0" prefHeight="94.0" prefWidth="321.0" text="Transfer Ownership" textFill="#0d8c2f">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="75.0" layoutY="216.0" prefHeight="26.0" prefWidth="223.0" text="New Production Company" textFill="#0d8c2f">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="productionCompanyName" layoutX="303.0" layoutY="218.0" prefHeight="26.0" prefWidth="236.0" />
+      <ButtonBar layoutX="199.0" layoutY="315.0" prefHeight="40.0" prefWidth="341.0">
+        <buttons>
+          <Button fx:id="transferButton" minWidth="62.0" mnemonicParsing="false" onAction="#transferAction" prefHeight="26.0" prefWidth="131.0" text="Transfer" textFill="#0d8c2f">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <Button fx:id="resetButton" minWidth="52.0" mnemonicParsing="false" onAction="#resetAction" prefHeight="26.0" text="Reset" textFill="#0d8c2f">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <Button fx:id="returnButton" mnemonicParsing="false" onAction="#returnAction" text="Return" textFill="#0d8c2f">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+        </buttons>
+      </ButtonBar>
+      <Label layoutX="77.0" layoutY="161.0" prefHeight="27.0" prefWidth="223.0" text="Movie" textFill="#0d8c2f">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="movieListMenu" layoutX="303.0" layoutY="160.0" prefHeight="26.0" prefWidth="236.0" />
+   </children>
+</AnchorPane>
