@@ -19,13 +19,16 @@ public class Server implements Runnable{
 
 
     Server()  {
+        System.out.println("In server");
         t = new Thread(this);
         t.start();
         movieList=Movie.getMovieList();
+        System.out.println(movieList.size());
         try {
             serverSocket = new ServerSocket(33333);
             while (true) {
                 Socket clientSocket = serverSocket.accept();
+                System.out.println("Got a client "+clientSocket);
                 serve(clientSocket);
             }
         } catch (Exception e) {
@@ -35,6 +38,7 @@ public class Server implements Runnable{
 
     @Override
     public void run(){
+        System.out.println("In run of read thread server");
         try (BufferedReader fr = new BufferedReader(new FileReader(INPUT_FILE_NAME))) {
             while (true) {
                 /* loading moviefile */
@@ -50,16 +54,19 @@ public class Server implements Runnable{
             }
             movieList=Movie.getMovieList();
         } catch (IOException e) {
+            System.out.println(e);
             System.out.println("File not found");
         }
     }
 
     public void serve(Socket clientSocket)throws IOException{
+        System.out.println("Serving client "+clientSocket);
         NetworkUtil networkUtil=new NetworkUtil(clientSocket);
         new ReadThreadServer(networkUtil,movieList);
     }
 
     public static void main(String[] args) {
+        System.out.println("In main of server");
         new Server();
     }
 }

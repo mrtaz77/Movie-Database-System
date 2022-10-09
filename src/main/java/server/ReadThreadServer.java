@@ -16,6 +16,7 @@ public class ReadThreadServer implements Runnable {
     public List<Movie>movieList;
 
     public ReadThreadServer(NetworkUtil networkUtil, List<Movie> movieList) {
+        System.out.println("In ReadThreadServer");
         this.networkUtil = networkUtil;
         this.movieList=movieList;
         this.thr=new Thread(this);
@@ -28,21 +29,26 @@ public class ReadThreadServer implements Runnable {
             while(true){
                 Object o=networkUtil.read();
                 if(o instanceof LoginDTO){
+                    System.out.println("Got loginDto in read thread server run");
                     LoginDTO loginDTO = (LoginDTO) o;
                     String productionCompanyName=loginDTO.getProductionCompanyName();
                     loginDTO.setMovieList(Movie.getMovieByProductionCompany(productionCompanyName));
                     loginDTO.setStatus(Movie.isProductionCompany(productionCompanyName));
+                    System.out.print(productionCompanyName);
+                    System.out.println(" "+movieList.size());
                     networkUtil.write(loginDTO);
                 }
                 else if(o instanceof Movie){
+                    System.out.println("Got movie in read thread server run");
                     Movie movie = (Movie) o;
+                    movie.showMovieDetails();
                     movieList.removeIf(temp -> temp.getName().equalsIgnoreCase(movie.getName()));
                     movieList.add(movie);
+                    System.out.println(movieList.size());
                     write(movieList);
                     networkUtil.write(movie);
                 }
             }
-
         }catch(Exception e){
             System.out.println(e);
         }finally{
@@ -54,6 +60,7 @@ public class ReadThreadServer implements Runnable {
         }
     }
     public void write(List<Movie> movieList)  {
+        System.out.println("Writing down movieList in file , current size "+movieList.size());
         try{
             BufferedWriter fw = new BufferedWriter(new FileWriter(OUTPUT_FILE_NAME));
             for(Movie temp:movieList){
